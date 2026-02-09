@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Portfolio | Cloud & Automation Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 1);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(51, 65, 85, 1);
+        }
+        .blog-content h1 { @apply text-3xl font-bold mb-4; }
+        .blog-content p { @apply text-lg leading-relaxed mb-6; }
+        .blog-content code { @apply bg-slate-100 dark:bg-slate-800 px-1 rounded text-sm; }
+        .blog-content pre { @apply bg-slate-100 dark:bg-slate-800 p-4 rounded-lg overflow-x-auto mb-6 text-sm; }
+    </style>
+</head>
+<body class="bg-white text-slate-900 dark:bg-[#0f172a] dark:text-slate-100 min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-md">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="font-bold text-xl tracking-tight cursor-pointer" onclick="navigateTo('home')">
+                <span class="text-blue-500">Devops</span>Engineer
+            </div>
+            <div class="flex items-center gap-6">
+                <button onclick="navigateTo('home')" class="hover:text-blue-500 transition-colors">Portfolio</button>
+                <button onclick="navigateTo('blog-list')" class="hover:text-blue-500 transition-colors">Blog</button>
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M16.243 17.657l.707.707M6.343 6.343l.707.707M12 5a7 7 0 100 14 7 7 0 000-14z"></path></svg>
+                    <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="pt-24 pb-20 px-6 max-w-5xl mx-auto">
+        
+        <!-- SECTION: PORTFOLIO -->
+        <section id="page-home" class="page-section">
+            <div class="space-y-20">
+                <!-- Hero -->
+                <header class="text-center py-10">
+                    <h2 class="text-blue-500 font-semibold tracking-widest uppercase text-sm mb-4">Available for New Projects</h2>
+                    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">Yoga setiawan</h1>
+                    <p class="text-xl md:text-2xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                        A DevOps Engineer specializing in <span class="text-slate-900 dark:text-white font-medium">Cloud Architecture</span>, <span class="text-slate-900 dark:text-white font-medium">Kubernetes</span>, and <span class="text-slate-900 dark:text-white font-medium">Automation</span>.
+                    </p>
+                </header>
+
+                <!-- Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Technical Stack</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="glass-card p-4 rounded-xl text-center hover:border-blue-300 transition-colors">
+                            <div class="font-bold text-blue-500 mb-1">Infrastructure</div>
+                            <div class="text-sm opacity-70">Terraform, Ansible</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl text-center hover:border-blue-300 transition-colors">
+                            <div class="font-bold text-blue-500 mb-1">Containerization</div>
+                            <div class="text-sm opacity-70">Docker, Kubernetes</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl text-center hover:border-blue-300 transition-colors">
+                            <div class="font-bold text-blue-500 mb-1">CI/CD</div>
+                            <div class="text-sm opacity-70">GitHub Actions, Jenkins</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl text-center hover:border-blue-300 transition-colors">
+                            <div class="font-bold text-blue-500 mb-1">Cloud</div>
+                            <div class="text-sm opacity-70">AWS, Azure, GCP</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div>
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="text-2xl font-bold">Featured Projects</h3>
+                        <a href="#" class="text-blue-500 text-sm font-medium hover:underline">View GitHub</a>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="glass-card group p-6 rounded-2xl cursor-pointer">
+                            <div class="mb-4 text-blue-500 opacity-60 group-hover:opacity-100 transition-opacity">01</div>
+                            <h4 class="text-xl font-bold mb-2">Multi-Region K8s Orchestration</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Automated deployment of global clusters across three AWS regions using Terraform and EKS.</p>
+                            <div class="flex gap-2">
+                                <span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-xs rounded">AWS</span>
+                                <span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-xs rounded">Terraform</span>
+                            </div>
+                        </div>
+                        <div class="glass-card group p-6 rounded-2xl cursor-pointer">
+                            <div class="mb-4 text-blue-500 opacity-60 group-hover:opacity-100 transition-opacity">02</div>
+                            <h4 class="text-xl font-bold mb-2">Zero-Trust CI/CD Pipeline</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Securing container pipelines with vulnerability scanning and automated rollbacks.</p>
+                            <div class="flex gap-2">
+                                <span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-xs rounded">Security</span>
+                                <span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-xs rounded">GitHub Actions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: BLOG LIST -->
+        <section id="page-blog-list" class="page-section hidden">
+            <h2 class="text-3xl font-bold mb-10">Engineering Blog</h2>
+            <div id="blog-container" class="space-y-12">
+                <!-- Blog items will be injected here -->
+            </div>
+        </section>
+
+        <!-- SECTION: BLOG POST DETAIL -->
+        <section id="page-blog-post" class="page-section hidden">
+            <button onclick="navigateTo('blog-list')" class="flex items-center gap-2 text-slate-500 hover:text-blue-500 transition-colors mb-8">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to all articles
+            </button>
+            <div id="post-content">
+                <!-- Content injected here -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-10 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm gap-4">
+            <p>&copy; 2024 John Doe. Built for scale.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-blue-500">LinkedIn</a>
+                <a href="#" class="hover:text-blue-500">Twitter</a>
+                <a href="#" class="hover:text-blue-500">Resume</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * BLOG DATA STORE
+         * In a production app, these could be fetched via JSON files.
+         */
+        const blogPosts = [
+            {
+                id: 'scaling-k8s',
+                title: 'Scaling Kubernetes for High Traffic Applications',
+                date: 'May 14, 2024',
+                readingTime: '8 min read',
+                excerpt: 'Deep dive into horizontal pod autoscaling and cluster resource optimization.',
+                content: `
+                    <h1>Scaling Kubernetes for High Traffic</h1>
+                    <p>Building high-availability systems requires more than just deploying pods. It requires a deep understanding of resource management and signal-based scaling.</p>
+                    <p>Horizontal Pod Autoscaler (HPA) is our best friend here. By monitoring CPU and Memory metrics, we can ensure our application scales as traffic surges.</p>
+                    <pre>
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-app-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: my-app
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+                    </pre>
+                    <p>In this article, we'll explore why setting the right average utilization target is critical for preventing "thrashing" in your clusters.</p>
+                `
+            },
+            {
+                id: 'terraform-best-practices',
+                title: 'Terraform State Management at Scale',
+                date: 'April 22, 2024',
+                readingTime: '5 min read',
+                excerpt: 'Avoiding conflicts and maintaining source of truth in collaborative environments.',
+                content: `
+                    <h1>Terraform State Best Practices</h1>
+                    <p>Managing Infrastructure as Code (IaC) is simple when you are working alone. However, in a team of 50 engineers, state management becomes a battlefield.</p>
+                    <p>Always use a remote backend. Storing state files locally is a recipe for disaster. Using S3 with DynamoDB locking ensures that only one person can modify a resource at a time.</p>
+                    <pre>
+terraform {
+  backend "s3" {
+    bucket         = "my-terraform-state"
+    key            = "global/s3/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
+  }
+}
+                    </pre>
+                    <p>We'll also discuss the "Module First" approach to keep your codebase DRY and maintainable.</p>
+                `
+            },
+            {
+                id: 'security-in-pipeline',
+                title: 'Shifting Security Left: Automated Scanning',
+                date: 'March 10, 2024',
+                readingTime: '6 min read',
+                excerpt: 'How to integrate Trivy and Snyk into your CI/CD workflows.',
+                content: `
+                    <h1>Shifting Security Left</h1>
+                    <p>Security should not be an afterthought. By integrating security tools directly into the CI pipeline, we catch vulnerabilities before they ever hit production.</p>
+                    <p>Using tools like <code>Trivy</code> for container image scanning helps us identify high and critical CVEs early in the development lifecycle.</p>
+                `
+            }
+        ];
+
+        /**
+         * ROUTING & NAVIGATION
+         */
+        function navigateTo(pageId, postId = null) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(p => p.classList.add('hidden'));
+            
+            // Handle specific page routing
+            if (pageId === 'home') {
+                document.getElementById('page-home').classList.remove('hidden');
+            } else if (pageId === 'blog-list') {
+                renderBlogList();
+                document.getElementById('page-blog-list').classList.remove('hidden');
+            } else if (pageId === 'blog-post' && postId) {
+                renderBlogPost(postId);
+                document.getElementById('page-blog-post').classList.remove('hidden');
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function renderBlogList() {
+            const container = document.getElementById('blog-container');
+            container.innerHTML = blogPosts.map(post => `
+                <article class="group cursor-pointer border-b border-slate-100 dark:border-slate-800 pb-12 last:border-0" onclick="navigateTo('blog-post', '${post.id}')">
+                    <div class="flex items-center gap-4 text-xs font-medium text-slate-400 mb-3 uppercase tracking-widest">
+                        <span>${post.date}</span>
+                        <span>•</span>
+                        <span>${post.readingTime}</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold group-hover:text-blue-500 transition-colors mb-3">${post.title}</h3>
+                    <p class="text-slate-500 dark:text-slate-400 max-w-2xl">${post.excerpt}</p>
+                    <div class="mt-4 text-blue-500 text-sm font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Read Story 
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function renderBlogPost(postId) {
+            const post = blogPosts.find(p => p.id === postId);
+            if (!post) return;
+
+            const container = document.getElementById('post-content');
+            container.innerHTML = `
+                <div class="max-w-3xl">
+                    <div class="flex items-center gap-4 text-sm font-medium text-slate-400 mb-6 uppercase tracking-widest">
+                        <span>${post.date}</span>
+                        <span>•</span>
+                        <span>${post.readingTime}</span>
+                    </div>
+                    <div class="blog-content">
+                        ${post.content}
+                    </div>
+                </div>
+            `;
+        }
+
+        /**
+         * THEME TOGGLE LOGIC
+         */
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcons(isDark);
+        });
+
+        function updateThemeIcons(isDark) {
+            if (isDark) {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
+
+        // Init Theme
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            updateThemeIcons(true);
+        }
+
+        // Initialize App
+        window.onload = () => navigateTo('home');
+    </script>
+</body>
+</html>
