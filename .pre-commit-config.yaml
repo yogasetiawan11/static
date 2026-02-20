@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks 
+
+      
+# This is a costume script to run gitleaks and scan for secrets in the codebase.
+# To execute this script, you need to have gitleaks installed and available in your PATH.
+# You can install gitleaks using the following command:
+
+# pip install pre-commit
+# add this file above to your repository and run the following command to install the pre-commit hook:
+# pre-commit install
