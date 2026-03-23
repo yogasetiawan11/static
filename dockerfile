@@ -2,12 +2,7 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-RUN addgroup -S worker && \
-    adduser -S worker -G worker && \
-    chown -R worker:worker /app
-    
-USER worker
-COPY package*.json .
+COPY package*.json ./
 RUN npm install
 
 COPY . .
@@ -16,8 +11,15 @@ RUN npm run build
 # Stage 2: Create the final image
 FROM nginx:alpine
 
-# Copy the static files to the nginx directory
+# Copy nginx configuration
+COPY --from=builder /app/nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy the built application
 COPY --from=builder /app/build /usr/share/nginx/html
+
+# Use default nginx user (safe)
+RUN chown -R nginx:nginx /usr/share/nginx/html
+USER nginx
 
 EXPOSE 80
 
